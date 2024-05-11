@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UTS</string>
+    <string name="hendy">Hendy Sukandi</string>
+    <string name="login">Log in</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="news_dasboard">News Dasboard</string>
+</resources>
