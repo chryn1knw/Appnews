@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1053019828810",
+    "project_id": "newsuts",
+    "storage_bucket": "newsuts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053019828810:android:cca5b36231d2272edaacb3",
+        "android_client_info": {
+          "package_name": "com.project.uts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm1-g97UR_eIv7sweO4_TJTgkww8ddiro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
