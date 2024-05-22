@@ -9,6 +9,7 @@
     tools:context=".RegisterActivity">
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_an_account"
@@ -22,11 +23,11 @@
         app:layout_constraintVertical_bias="0.062" />
 
     <TextView
+        android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints="username"
-        android:text="@string/username"
-        android:hint="@string/username"
+        android:text="@string/email"
         android:textColor="@color/white"
         android:fontFamily="@font/cooperhewitt_book"
         android:textSize="14sp"
@@ -38,10 +39,10 @@
         app:layout_constraintVertical_bias="0.193" />
 
     <EditText
-        android:id="@+id/et_register_username"
+        android:id="@+id/et_email"
         android:layout_width="2in"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textColor="@color/white"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,6 +53,7 @@
         app:layout_constraintVertical_bias="0.231" />
 
     <TextView
+        android:id="@+id/tv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
@@ -67,7 +69,7 @@
         app:layout_constraintVertical_bias="0.306" />
 
     <EditText
-        android:id="@+id/et_register_password"
+        android:id="@+id/et_password"
         android:layout_width="2in"
         android:layout_height="wrap_content"
         android:inputType="textPassword"

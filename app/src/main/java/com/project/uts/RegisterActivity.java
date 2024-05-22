@@ -16,8 +16,12 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class RegisterActivity extends AppCompatActivity {
 
+    private FirebaseAuth myAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +29,11 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         Button registerButton = findViewById(R.id.button_register);
-        EditText editTextUsername = findViewById(R.id.et_register_username);
-        EditText editTextPassword = findViewById(R.id.et_register_password);
+        EditText editTextUsername = findViewById(R.id.et_email);
+        EditText editTextPassword = findViewById(R.id.et_password);
         TextView tvLogin = findViewById(R.id.tv_login);
         String text = "Already have an account? Log in";
+        myAuth = FirebaseAuth.getInstance();
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,12 +52,20 @@ public class RegisterActivity extends AppCompatActivity {
                     editTextPassword.requestFocus();
                     return;
                 }
-                Log.d("RegisterButton", "Your account has been created");
-                Toast.makeText(getApplicationContext(), "Your account has been created", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+                myAuth.createUserWithEmailAndPassword(name, password)
+                        .addOnCompleteListener(RegisterActivity.this, task -> {
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = myAuth.getCurrentUser();
+                                Log.d("RegisterActivity", "createUserWithEmail:success");
+                                Toast.makeText(RegisterActivity.this, "Your account has been created", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Log.w("RegisterActivity", "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(RegisterActivity.this, "Your email is already registered", Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
         });
 

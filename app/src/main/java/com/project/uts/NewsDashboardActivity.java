@@ -18,7 +18,6 @@ public class NewsDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
-
         ArrayList<String> languages = new ArrayList<String>();
         languages.add("Kotlin");
         languages.add("Swift");
@@ -26,6 +25,7 @@ public class NewsDashboardActivity extends AppCompatActivity {
         languages.add("C#");
         languages.add("Javascript");
         languages.add("Java");
+
 
         ListView lv_languages = (ListView) findViewById(R.id.lv_languages);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, languages);

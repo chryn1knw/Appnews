@@ -7,4 +7,6 @@
     <string name="password">Password</string>
     <string name="create_an_account">Create an Account</string>
     <string name="news_dasboard">News Dasboard</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="email">Email</string>
 </resources>
